@@ -1,0 +1,29 @@
+body {
+  height: 700px;
+  width: 1500px;
+  background: url("casino.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: sans-serif;
+  color: white;
+}
+marquee {
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 8px 5px 5px black;
+    word-spacing: 5px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+  #lien {
+      margin-top: 320px;
+      margin-left: 425px;
+      font-size: 40px;
+      color: white;
+  }
+  h3:hover {
+      color: black;
+  }
+  h3 {
+      color: white;
+  }

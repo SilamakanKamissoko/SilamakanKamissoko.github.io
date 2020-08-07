@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASINO</title>
+    <link rel="stylesheet" href="projet.css">
+</head>
+<body>
+    <div id="roulette">
+        <img src="roulette.gif" alt="jeu" width="600px" height="500px">
+    </div>
+    <form action="">
+        <div id="pari">
+            Faites vos paris : 
+            <select name="choix" id="choix">
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+                <option value="4"> 4 </option>
+                <option value="5"> 5 </option>
+                <option value="6"> 6 </option>
+                <option value="7"> 7 </option>
+                <option value="8"> 8 </option>
+                <option value="9"> 9 </option>
+                <option value="10">10</option>
+                <option value="11">11 </option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17" selected>17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>  
+                <option value="36">36</option>
+            </select>
+        </div>
+        <div id="Mise">
+            Miser ici : <input type="number" id="mise">
+        </div>
+        <div id="go">
+            <button type="button">GO</button>
+        </div>
+        <div id="stop">
+            <button type="button">STOP</button>
+        </div>
+        <div id="texte">
+            <h2>Comment Jouer ?</h2>
+            <ol>
+                <li>Pariez sur un nombre</li><br>
+                <li>Miser une somme</li>
+                <p>NB: La somme est en millier</p>
+                <li>Cliquez sur GO pour lancer</li><br>
+                <li>Cliquez sur STOP pour voir le nombre tiré</li><br>
+                <li>Cliquez sur OK pour voir les resultats </li>
+            </ol>
+            <a href="index.html"><h3>Ciquez ici pour retourner sur l'accueil</h3></a>
+
+        </div>
+
+    </form>
+    
+    <div id="player">
+        GAMER : <input type="number" id="joueur">
+    </div>
+    <div id="proprio"> 
+        CASINO : <input type="number" id="casino">
+    </div>
+    
+
+   <script>
+       
+        const  Max = 36, Min = 0;
+        var nombreMystere, valeurChoisi, gamer = 100 , casino = 0, mise = 0;
+        var Bouton = document.querySelector("button");
+        var BoutonStop = document.getElementById("stop");
+        var chooseGamer = document.getElementById("choix");   
+        document.getElementById("joueur").value = gamer;
+        document.getElementById("casino").value = casino; 
+
+        // Désactivation du bouton GO et STOP
+        Bouton.disabled = true;
+        BoutonStop.disabled = true;
+
+        // Lorsque le gamer choisi un nombre la fonction s'executera et recupère la valeur choisi
+        chooseGamer.onchange = function() {
+            Bouton.disabled = false;
+            valeurChoisi = chooseGamer.value;
+        }
+
+        // Lorsque le bouton GO est cliqué la fonction s'execute, active le bouton STOP et fourni un nombre entre 0 et 36
+        Bouton.addEventListener("click", nombreHasard);
+        function nombreHasard()
+        {
+            // Activation du bouton stop
+            BoutonStop.disabled = false;
+
+            // Regenerer un nombre au hasard
+            nombreMystere = Math.floor ( Max*Math.random() + Min);
+             
+        }
+
+        // Lorsque le bouton stop est cliqué la fonction s'execute, recupère la mise, affiche l'alert, les conditions et remplir les champs du gamer et casino 
+        BoutonStop.addEventListener("click", function() {
+                // Récuperation de la mise
+                mise = document.getElementById("mise").value;
+
+                // Afficher
+                alert("L'ordinateur a tiré "+nombreMystere+" et le joueur a parier sur "+valeurChoisi);
+
+                // Les conditions
+                if(valeurChoisi == nombreMystere) {
+
+                gamer = gamer + mise * (1 + 35);
+                console.log("Le joueur a gagné  : "+gamer);
+                } 
+                else if((valeurChoisi % 2 == 0 && nombreMystere % 2 == 0) || (valeurChoisi % 2 != 0 && nombreMystere % 2 != 0)) {
+                gamer = gamer + (mise * 2);
+                console.log("Le joueur a gagné "+gamer);
+                } 
+                else {
+                gamer = gamer - mise;
+                casino = casino + (mise * 1);
+                console.log("Le proprio a gagné : "+casino);
+                }
+                
+                // Remplissage des champs casino et gamer
+                document.getElementById("joueur").value = gamer;
+                document.getElementById("casino").value = casino;
+            });
+    
+        
+        
+   </script> 
+    
+</body>
+</html>

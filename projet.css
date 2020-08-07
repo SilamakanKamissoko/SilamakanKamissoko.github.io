@@ -1,0 +1,92 @@
+#pari {
+    margin-top: 100px;
+    margin-left: 0px;
+    font-size: x-large;
+    color: white;
+}
+#choix {
+    background-color: rgb(231, 208, 139);
+    color: black;
+    padding: 5px;
+}
+#Mise {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 0px;
+    font-size: x-large;
+    color: white;
+}
+#mise {
+    padding: 5px;
+    background-color: rgb(231, 208, 139);
+    color: black;
+}
+#roulette {
+    position: absolute;
+    margin-left: 600px;
+}
+#go {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 140px;
+}
+#stop {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: 190px;
+}
+button {
+    padding: 5px;
+    border-radius: 20px;
+    color: black;
+    background-color:  rgb(231, 208, 139);
+    font-size: large;
+}
+#player {
+    position: absolute;
+    margin-top: 550px;
+    margin-left: 550px;
+    font-size: x-large ;
+    
+}
+#joueur {
+    background-color: black;
+    color: orange;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: large;
+}
+#proprio {
+    position: absolute;
+    margin-top: 550px;
+    margin-left: 900px;
+    font-size: x-large ;
+}
+#casino {
+    background-color: black;
+    color: orange;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: large;
+}
+form {
+    position: absolute;
+    background-color: black;
+    width: 300px;
+    height: 700px;
+}
+#texte {
+    position: absolute;
+    margin-top:80px ;
+    color: white;    
+}
+h2 {
+    text-decoration: underline;
+    text-transform: uppercase ;
+}
+a:hover {
+    color: black;
+}
+h3 {
+    color: white;
+}
